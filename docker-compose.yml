@@ -1,26 +1,26 @@
 version: "3.7"
 
 services:
-  # 1. Elasticsearch: Tempat menyimpan data (Storage)
+  
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
     container_name: elasticsearch
     environment:
       - node.name=elasticsearch
       - discovery.type=single-node
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # Membatasi RAM agar laptop aman
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g" 
     ports:
       - "9200:9200"
     networks:
       - elk
 
-  # 2. Logstash: ETL Tool (Pengolah Data)
+ 
   logstash:
     image: docker.elastic.co/logstash/logstash:7.17.9
     container_name: logstash
     volumes:
-      - ./pipeline/:/usr/share/logstash/pipeline/ # Load config ETL
-      - ./data/:/usr/share/logstash/data/ # Load data log mentah
+      - ./pipeline/:/usr/share/logstash/pipeline/ 
+      - ./data/:/usr/share/logstash/data/ 
     ports:
       - "5044:5044"
     depends_on:
@@ -28,7 +28,7 @@ services:
     networks:
       - elk
 
-  # 3. Kibana: Visualisasi Dashboard
+
   kibana:
     image: docker.elastic.co/kibana/kibana:7.17.9
     container_name: kibana

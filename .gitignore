@@ -1,0 +1,9 @@
+
+data/access.log
+data/*.tsv
+data/.lock
+data/uuid
+
+
+__pycache__/
+*.DS_Store
