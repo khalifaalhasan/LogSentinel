@@ -41,5 +41,5 @@ The pipeline consists of three main stages:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/username/LogSentinel-ELK.git](https://github.com/username/LogSentinel-ELK.git)
+git clone [https://github.com/khalifaalhasan/LogSentinel-ELK.git](https://github.com/khalifaalhasan/LogSentinel-ELK.git)
 cd LogSentinel-ELK
